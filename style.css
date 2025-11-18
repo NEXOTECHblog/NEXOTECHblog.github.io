@@ -1,0 +1,192 @@
+/* =======================
+   PARTE 2 - CSS (BLOG NEXO TECH)
+   ======================= */
+
+/* -------- Configurações Gerais -------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Permitir zoom em dispositivos móveis */
+meta[name="viewport"] {
+  user-scalable: yes;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0a0a0f;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* -------- Cabeçalho -------- */
+.cabecalho {
+  background-color: #0d0d17;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  border-bottom: 2px solid #00aaff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo h1 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #00aaff;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #00aaff;
+  text-shadow: 0 0 10px #00aaff;
+}
+
+/* -------- Seção de Destaque -------- */
+.destaque {
+  background: linear-gradient(135deg, #0a0a0f, #001f33);
+  text-align: center;
+  padding: 5rem 2rem;
+  color: #ffffff;
+}
+
+.destaque h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.destaque p {
+  font-size: 1.2rem;
+  color: #cccccc;
+  margin-bottom: 2rem;
+}
+
+#ver-artigos {
+  background-color: #00aaff;
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#ver-artigos:hover {
+  background-color: #0090dd;
+  box-shadow: 0 0 20px #00aaff;
+}
+
+/* -------- Seção de Posts -------- */
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.post {
+  background-color: #11111b;
+  border: 1px solid #1c1c2e;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.1);
+}
+
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 170, 255, 0.3);
+}
+
+.post img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.post h3 {
+  font-size: 1.3rem;
+  color: #00aaff;
+  margin: 1rem;
+}
+
+.post p {
+  margin: 0 1rem 1rem;
+  color: #ccc;
+}
+
+.botao-leia {
+  display: inline-block;
+  margin: 0 1rem 1.5rem;
+  padding: 0.6rem 1.4rem;
+  background-color: #00aaff;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.botao-leia:hover {
+  background-color: #0088cc;
+  box-shadow: 0 0 15px #00aaff;
+}
+
+/* -------- Rodapé -------- */
+.rodape {
+  background-color: #0d0d17;
+  text-align: center;
+  padding: 1.5rem 0;
+  color: #777;
+  font-size: 0.9rem;
+  border-top: 1px solid #1c1c2e;
+}
+
+/* -------- Responsividade (Mobile) -------- */
+@media (max-width: 768px) {
+  .cabecalho {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .destaque h2 {
+    font-size: 2rem;
+  }
+
+  .posts {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+}
+
