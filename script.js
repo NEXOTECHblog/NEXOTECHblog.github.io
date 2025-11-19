@@ -28,7 +28,7 @@ window.addEventListener("scroll", () => {
 const container = document.getElementById("lista-posts");
 
 if (container) {
-  fetch("/posts/posts.json")
+  fetch("posts.json")
     .then(res => {
       if (!res.ok) {
         throw new Error("Erro ao carregar JSON de posts");
@@ -61,3 +61,4 @@ if (container) {
         </p>`;
     });
 }
+
