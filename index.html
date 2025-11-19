@@ -1,58 +1,46 @@
-<!-- =======================
-   PARTE 1 - HTML (BLOG NEXO TECH)
-   ======================= -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nexo Tech - Blog de Tecnologia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexo Tech Blog</title>
 
-  <!-- Link do CSS -->
-  <!-- (Aqui adicionaremos o arquivo style.css depois) -->
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
+
 <body>
 
-  <!-- ======= CABEÇALHO ======= -->
-  <header class="cabecalho">
-    <div class="logo">
-      <!-- Pode trocar a logo aqui -->
-      <h1>Nexo <span>Tech</span></h1>
-    </div>
-    <nav class="menu">
-      <ul>
-        <!-- Aqui colocar os links das páginas futuramente -->
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Notícias</a></li>
-        <li><a href="#">Reviews</a></li>
-        <li><a href="#">Tutoriais</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <div class="logo">
+            <h1>Nexo <span>Tech</span></h1>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#lista-posts">Artigos</a></li>
+                <li><a href="#">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- ======= SEÇÃO DE DESTAQUE ======= -->
-  <section class="destaque">
-    <div class="conteudo-destaque">
-      <h2>Bem-vindo ao Nexo Tech 🚀</h2>
-      <p>As últimas novidades do mundo da tecnologia, em um só lugar.</p>
-      <!-- Botão futuramente pode ter link para posts recentes -->
-      <button id="ver-artigos">Ver artigos</button>
-    </div>
-  </section>
+    <!-- Seção de destaque -->
+    <section class="destaque">
+        <h2>Bem-vindo ao Nexo Tech</h2>
+        <p>Artigos inteligentes sobre tecnologia, IA, automação e futuro digital.</p>
+        <button id="ver-artigos">Ver artigos</button>
+    </section>
 
-  <!-- ======= SEÇÃO DE POSTS ======= -->
- <main class="posts" id="lista-posts"></main>
+    <!-- Lista automática de posts -->
+    <section class="posts" id="lista-posts">
+        <p style="text-align:center; opacity:.6;">Carregando artigos...</p>
+    </section>
 
-  <!-- ======= RODAPÉ ======= -->
-  <footer class="rodape">
-    <p>&copy; 2025 Nexo Tech. Todos os direitos reservados.</p>
-  </footer>
+    <!-- Rodapé -->
+    <footer class="rodape">
+        © 2025 Nexo Tech — Todos os direitos reservados
+    </footer>
 
-  <!-- Link do JS -->
-  <!-- (Aqui adicionaremos o arquivo script.js depois) -->
-  <script src="script.js"></script>
 </body>
 </html>
-
