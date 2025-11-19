@@ -62,22 +62,26 @@ fetch(postsURL)
   .then(res => res.json())
   .then(posts => {
     lista.innerHTML = ""; // limpa posts padrão
+// Carrega a lista de posts
+fetch('/posts/posts.json')   // <-- Caminho correto no GitHub Pages
+  .then(response => response.json())
+  .then(posts => {
+    const lista = document.getElementById('lista-posts');
 
     posts.forEach(post => {
-      const artigo = document.createElement("article");
-      artigo.classList.add("post");
+      const artigo = document.createElement('article');
+      artigo.classList.add('post-card');
 
       artigo.innerHTML = `
-        <img src="${post.image}" alt="Imagem do artigo">
+        <img src="${post.image}" alt="${post.title}">
         <h3>${post.title}</h3>
         <p>${post.summary}</p>
-        <a href="${post.link}" class="botao-leia">Leia mais</a>
+        <p class="meta">Por ${post.author} — ${post.date}</p>
+        <a href="${post.link}" class="btn">Ler mais</a>
       `;
 
       lista.appendChild(artigo);
     });
   })
-  .catch(err => {
-    lista.innerHTML = "<p>Erro ao carregar posts...</p>";
-    console.error(err);
-  });
+  .catch(err => console.error('Erro ao carregar posts.json:', err));
+
