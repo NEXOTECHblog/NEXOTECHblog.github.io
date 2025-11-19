@@ -1,57 +1,54 @@
 /* =======================
-   PARTE 3 - JS (BLOG NEXO TECH)
-   ======================= */
+   NEXO TECH - SCRIPT PRINCIPAL
+======================= */
 
-/* ---- Rolagem automática para a seção de artigos ---- */
-const botaoVerArtigos = document.getElementById("ver-artigos");
-if (botaoVerArtigos) {
-  botaoVerArtigos.addEventListener("click", () => {
-    const secaoPosts = document.querySelector(".posts");
-    if (secaoPosts) {
-      secaoPosts.scrollIntoView({ behavior: "smooth" });
-    }
+/* ---- Rolagem automática ---- */
+const botao = document.getElementById("ver-artigos");
+if (botao) {
+  botao.addEventListener("click", () => {
+    document.getElementById("lista-posts").scrollIntoView({
+      behavior: "smooth"
+    });
   });
 }
 
-/* ---- Animação dos posts ao rolar a página ---- */
+/* ---- Animação ao rolar ---- */
 window.addEventListener("scroll", () => {
-  const posts = document.querySelectorAll(".post-card, .post");
-  posts.forEach(post => {
-    const pos = post.getBoundingClientRect().top;
-    const tela = window.innerHeight;
-
-    if (pos < tela - 100) {
-      post.classList.add("visivel");
+  const cards = document.querySelectorAll(".post-card");
+  cards.forEach(card => {
+    const pos = card.getBoundingClientRect().top;
+    if (pos < window.innerHeight - 100) {
+      card.classList.add("visivel");
     }
   });
 });
 
-/* ============================
-   LISTAGEM AUTOMÁTICA DE POSTS NO INDEX
-   ============================ */
+/* ---- Carregamento automático dos posts ---- */
+const container = document.getElementById("lista-posts");
 
-const lista = document.getElementById("lista-posts");
-
-if (lista) {
-  fetch("posts/posts.json")  // Caminho correto no GitHub Pages
+if (container) {
+  fetch("posts/posts.json")
     .then(res => res.json())
     .then(posts => {
-      lista.innerHTML = ""; // limpa qualquer coisa padrão
+      container.innerHTML = ""; // limpa "Carregando..."
 
       posts.forEach(post => {
-        const artigo = document.createElement("article");
-        artigo.classList.add("post-card");
+        const card = document.createElement("article");
+        card.classList.add("post-card");
 
-        artigo.innerHTML = `
+        card.innerHTML = `
           <img src="${post.image}" alt="${post.title}">
           <h3>${post.title}</h3>
           <p>${post.summary}</p>
-          <p class="meta">Por ${post.author} — ${post.date}</p>
-          <a href="posts/${post.link}" class="btn">Ler mais</a>
+          <p style="margin-left:1rem; opacity:.7;">Por ${post.author} — ${post.date}</p>
+          <a class="btn" href="${post.link}">Ler mais</a>
         `;
 
-        lista.appendChild(artigo);
+        container.appendChild(card);
       });
     })
-    .catch(err => console.error("Erro ao carregar posts.json:", err));
+    .catch(err => {
+      container.innerHTML = "<p style='text-align:center;color:red'>Erro ao carregar posts.</p>";
+      console.error(err);
+    });
 }
