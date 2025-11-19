@@ -27,7 +27,7 @@ window.addEventListener("scroll", () => {
 const container = document.getElementById("lista-posts");
 
 if (container) {
-  fetch("posts/posts.json")
+  fetch("/posts.json")
     .then(res => res.json())
     .then(posts => {
       container.innerHTML = ""; // limpa "Carregando..."
@@ -52,3 +52,4 @@ if (container) {
       console.error(err);
     });
 }
+
