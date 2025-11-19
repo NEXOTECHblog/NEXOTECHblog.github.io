@@ -27,10 +27,11 @@ window.addEventListener("scroll", () => {
 const container = document.getElementById("lista-posts");
 
 if (container) {
- fetch('posts.json')
+  fetch('/posts/posts.json')
     .then(res => res.json())
     .then(posts => {
       container.innerHTML = ""; // limpa "Carregando..."
+
 
       posts.forEach(post => {
         const card = document.createElement("article");
@@ -52,6 +53,7 @@ if (container) {
       console.error(err);
     });
 }
+
 
 
 
