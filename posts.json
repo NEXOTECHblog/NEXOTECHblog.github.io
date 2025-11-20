@@ -1,5 +1,15 @@
 [
   {
+    "title": "O papel da internet na disseminação de informações",
+    "image": "assets/img/internet-informacao.jpg",
+    "summary": "Como a internet transformou a forma de consumir e compartilhar conhecimento no mundo moderno.",
+    "author": "Jeremy de Rívia",
+    "date": "12/11/2025",
+    "link": "internet-distribuicao-informacao.html"
+  }
+]
+[
+  {
     "title": "Por que 2025 é o ano da consolidação da IA no dia a dia",
     "image": "assets/210700.png",
     "summary": "Entenda como 2025 marca o ponto de virada para a inteligência artificial no cotidiano.",
@@ -8,6 +18,7 @@
     "link": "2025-consolidacao-ia.html"
   }
 ]
+
 
 
 
